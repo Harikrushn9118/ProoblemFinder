@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
-import NavBar from './components/Navbar';
-import SolveProblem from './Pages/solveproblem';
+import NavBar from './components/NavBar';
+import Home from './pages/Home';
 
 function App() {
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<SolveProblem />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </>
   );

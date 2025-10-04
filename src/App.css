@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   margin: 0;
   padding: 0;
@@ -6,27 +7,17 @@ body {
   min-height: 100vh;
 }
 
-/* Fixed Navbar */
+/* Navigation */
 nav {
   background-color: #333;
   color: white;
   padding: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-}
-
-
-body {
-  padding-top: 60px;
+  margin-bottom: 2rem;
 }
 
 nav a {
   color: white;
-  margin: 0 10.5px;
+  margin: 0 10px;
   text-decoration: none;
   font-weight: 500;
 }
@@ -43,15 +34,13 @@ nav a:hover {
   padding: 0 1rem;
 }
 
-/* Button Styles */
 button {
   border-radius: 8px;
-  border: 1.3px solid transparent;
+  border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 510;
-  background-color: #646cff;
-  color: rgb(0, 0, 0);
+  font-weight: 500;
+  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -60,21 +49,11 @@ button:hover {
   border-color: #646cff;
 }
 
-.Trackbutton{
-  background-color: #646cff;
-  border-radius: 8px; 
-}
-
-.Trackbutton.clicked{
-  background-color: #333;
-}
-.Trackbutton:hover{
-  border-color: #646cff;
-}
+/* Form Elements */
 input {
   padding: 0.5rem;
   border: 1px solid #ddd;
-  border-radius: 9px;
+  border-radius: 4px;
   margin: 0.5rem 0;
 }
 
@@ -116,7 +95,6 @@ input {
   margin-top: 2rem;
 }
 
-/* Stats and Charts */
 .stats-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -126,19 +104,18 @@ input {
 
 .stats-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
 .chart-container {
-  grid-column-start: 1;
-  grid-column-end: -1;
+  grid-column: 1 / -1;  /* Make chart container take full width */
   background: white;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 2rem;
-  min-height: 400px;
+  min-height: 400px;  /* Ensure enough space for the chart */
 }
 
 .user-stats {
@@ -151,7 +128,7 @@ input {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
@@ -197,6 +174,14 @@ input {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.chart-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
 }
 
 .heatmap-container {
@@ -246,11 +231,8 @@ input {
   color: #ff1744;
 }
 
-/* Problem Solving Section */
 .solve-problem-container {
   padding: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .filters-section {
@@ -263,7 +245,7 @@ input {
 .username-section {
   display: flex;
   gap: 1rem;
-} 
+}
 
 .tags-section {
   margin: 1rem 0;
@@ -271,33 +253,28 @@ input {
 
 .tags-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 0.5rem;
   margin-top: 1rem;
 }
+
 .tag-button {
   padding: 0.5rem;
-  border: 1.2px solid #ddd;
-  border-radius: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   background: white;
   cursor: pointer;
-  transition: all 0.3s ease; 
-}
-
-.tag-button:hover {
-  transform: scale(1.09);
-  transition: transform 1s ease; 
 }
 
 .tag-button.active {
-  background-color: #646cff;
+  background: #646cff;
   color: white;
   border-color: #646cff;
 }
 
 .problems-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -310,19 +287,19 @@ input {
 }
 
 .problem-card.solved {
-  border-left: 4px solid #00c853;
+  border: 2px solid #00c853;
 }
 
 .problem-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  margin: 0.5rem 0;
 }
 
 .tag {
   background: #f0f0f0;
-  padding: 0.25rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 4px;
   font-size: 0.9rem;
 }
@@ -335,31 +312,15 @@ input {
 
 .bookmark-button {
   background: transparent;
-  border: 1.2px solid #646cff;
-  cursor: pointer;
+  border: 1px solid #646cff;
   color: #646cff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
 .bookmark-button.active {
-  background-color: #646cff;
+  background: #646cff;
   color: white;
 }
 
 .bookmarked-section {
   margin-top: 3rem;
-}
-
-
-select {
-  padding: 0.5rem;
-  border: 1px solid #333;
-  border-radius: 4px;
-  background: e;
-  color: #333;
-  font-size: 0.9em;
-  cursor: pointer;
-  border-radius: 8px;
 }
