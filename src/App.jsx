@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/Navbar';
-import Home from './pages/Home';
+import Home from './Pages/Home';
 import CompareRating from './Pages/CompareRating';
-import YourStats from './pages/YourStats';
-import SolveProblem from './pages/solveproblem';
+import YourStats from './Pages/YourStats';
+import SolveProblem from './Pages/solveproblem';
 
 function App() {
   return (
