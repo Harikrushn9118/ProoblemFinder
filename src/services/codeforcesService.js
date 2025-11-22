@@ -48,7 +48,7 @@ export const getContestList = async () => {
 export const analyzeProblemTags = (submissions) => {
   const tagCount = {};
   const acceptedSubmissions = submissions.filter(sub => sub.verdict === 'OK');
-  
+
   acceptedSubmissions.forEach(submission => {
     submission.problem.tags.forEach(tag => {
       tagCount[tag] = (tagCount[tag] || 0) + 1;
@@ -65,7 +65,7 @@ export const analyzeProblemTags = (submissions) => {
 export const analyzeProblemRatings = (submissions) => {
   const ratingCount = {};
   const acceptedProblems = new Set();
-  
+
   submissions.forEach(sub => {
     if (sub.verdict === 'OK') {
       const problemId = `${sub.problem.contestId}-${sub.problem.index}`;
@@ -122,13 +122,13 @@ export const getProblemsByRating = async (rating, tags = []) => {
   try {
     const res = await axios.get(`${BASE_URL}/problemset.problems`);
     let problems = res.data.result.problems;
-    
+
     if (rating) {
       problems = problems.filter(problem => problem.rating === parseInt(rating));
     }
-    
+
     if (tags.length > 0) {
-      problems = problems.filter(problem => 
+      problems = problems.filter(problem =>
         tags.every(tag => problem.tags.includes(tag))
       );
     }
